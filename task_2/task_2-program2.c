@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int main()
 {
-	//declare the variable.
+	//declare the variable here.
 	int i = 0,count = 0;
 	char key;
 	//dynamic memory allocation.
