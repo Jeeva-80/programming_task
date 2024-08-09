@@ -3,7 +3,7 @@
 #include <stdlib.h>
 int main()
 {
-    //allocating memory size dynamically.
+    //allocating memory size dynamically here.
     char *str = malloc(30);
     char *str1 = malloc(30);
     //read the first string.
