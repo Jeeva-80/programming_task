@@ -1,5 +1,5 @@
 #include <stdio.h>
- 
+#include <stdlib.h> 
 int main()
 {
     //declare variable.
@@ -7,8 +7,8 @@ int main()
     //ask the user for array size.
     printf("Enter the number of elements of arrays: ");
     scanf("%d",&n);
-    //declare the array.
-    int arr[n];
+    //declare the array memory dynamically.
+    int *arr = malloc(sizeof(int)*n);
     //read the array index value from the user.
     for(i = 0;i < n; i++)
     {
@@ -38,6 +38,7 @@ int main()
     {
         printf("Number was NOT found\n");
     }
+ free(arr);
 }
 
 //End of program.
