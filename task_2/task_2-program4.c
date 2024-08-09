@@ -3,7 +3,7 @@
 
 int main()
 {
-	//declare the variable.
+	//declare the variable here.
 	int i = 0,arr[256] = {0};
 	//read the string and dynamic memory allocation.
 	printf("Enter the String: ");
