@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 //function prototype.
 int Add_val(int [],int ,int);
 int main()
@@ -8,8 +9,8 @@ int main()
     //ask the user for array size.
     printf("Enter the number of elements: ");
     scanf("%d",&n);
-    //declare array.
-    int a[n];
+    //declare array memory dynamically.
+    int *a = malloc(sizeof(int)*n);
     //read the array value.
     for(i = 0;i < n; i++)
     {
@@ -24,6 +25,7 @@ int main()
     {
         printf("%d\n",a[i]);
     }
+    free(a);
     return 0;
 }
 //function definition. 
