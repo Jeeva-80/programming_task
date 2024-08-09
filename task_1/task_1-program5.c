@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 int main()
 {
     //declare the variable.
@@ -8,8 +8,8 @@ int main()
     printf("Enter the number of elements: ");
     scanf("%d",&n);
     //declare arrays.
-    int arr[n];
-    int arr_1[n];
+    int *arr = malloc(sizeof(int)*n);
+    int *arr_1 = malloc(sizeof(int)*n);
     //read the array value.
     for(i = 0;i < n; i++)
     {
@@ -28,6 +28,8 @@ int main()
     {
         printf("%d\n", arr_1[i]);
     }
+    free(arr);
+    free(arr_1);
     return 0;
 }
 
