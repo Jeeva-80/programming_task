@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 //function prototype.
 int sum_of_arrays(int [],int [],int );
 int main()
@@ -8,9 +9,9 @@ int main()
     //ask the user for array size.
     printf("Enter the number of elements: ");
     scanf("%d",&n);
-    //declare arrays.
-    int arr[n];
-    int arr_1[n];
+    //declare arrays memory dynamically.
+    int *arr = malloc(sizeof(int)*n);
+    int *arr_1 = malloc(sizeof(int)*n);
     //read the first array value.
     for(i = 0;i < n; i++)
     {
@@ -26,6 +27,8 @@ int main()
     }
     //call the function.
     sum_of_arrays(arr,arr_1,n);
+    free(arr);
+    free(arr_1);
     return 0;
 }
 //function definition. 
