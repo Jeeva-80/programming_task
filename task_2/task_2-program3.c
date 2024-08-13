@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int main()
 {
-	//declare the variable here.
+	//declare the variable.
 	int i = 0,flag = 0;
 	char ch,ch1;
 	//dynamic memory allocation.
@@ -10,16 +10,12 @@ int main()
 	//read the string.
 	printf("Enter the string: ");
 	scanf("%[^\n]",str);
-	//clear the input buffer.
-	getchar();
 	//read the character should replace. 
 	printf("Enter the letter to be replaced: ");
-	scanf("%c",&ch);
-	//clear the buffer.
-	getchar();
-	//read the replaced charactr.
+	scanf(" %c",&ch);
+	//read the replaced character.
 	printf("Enter the letter: ");
-	scanf("%c",&ch1);
+	scanf(" %c",&ch1);
 	//condition both character is same.
 	if(ch == ch1)
 	{
@@ -54,3 +50,5 @@ int main()
 	free(str);
 	return 0;
 }
+
+//End of program.
