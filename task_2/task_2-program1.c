@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int main()
 {
-    // declare the variable here.
+    // declare the variable.
     int i = 0,temp = 0,flag = 0;
     char key;
     //dynamic allocation memory.
@@ -10,11 +10,9 @@ int main()
     //read the string.
     printf("Enter the string: ");
     scanf("%[^\n]",str);
-    //remove the input buffer.
-    getchar();
     //read the found the character.
     printf("Enter the letter to be found: ");
-    scanf("%c",&key);
+    scanf(" %c",&key);
     //loop.
     for(i = 0;str[i];i++)
     {
@@ -39,3 +37,5 @@ int main()
     free(str);
     return 0;
 }
+
+//End of program.
