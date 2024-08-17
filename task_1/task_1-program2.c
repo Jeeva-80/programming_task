@@ -9,7 +9,7 @@ int main()
     //ask the user for array size.
     printf("Enter the number of elements: ");
     scanf("%d",&n);
-    //declare array memory dynamically.
+    //declare array memory dynamically
     int *a = malloc(sizeof(int)*n);
     //read the array value.
     for(i = 0;i < n; i++)

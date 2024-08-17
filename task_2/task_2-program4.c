@@ -18,7 +18,7 @@ int main()
 	//loop.
 	for (i = 256; i > 0; i--)
 	{
-		//check the condition and print the occurance.
+		//check the condition and print the occurance
 		if (arr[i] > 0)
 		{
 			printf("%c: %d\n", i, arr[i]);

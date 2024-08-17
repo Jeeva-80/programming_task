@@ -3,7 +3,7 @@
 #include <stdlib.h>
 int main()
 {
-    int i = 0,j = 0,count = 0;
+    int i = 0,j = 0,count = 0,temp=0;
     //allocating memory size dynamically.
     char *str = malloc(30);
     char *str1 = malloc(30);
@@ -17,9 +17,10 @@ int main()
     //compare the both string for loop.
     for(i = 0;str[i];i++)
     {
+        count=0;
         for(j = 0;str1[j];j++)
         {
-            if(str[i] != str1[j])
+            if(str[i+j] != str1[j])
             {
                 break;
             }
@@ -27,12 +28,16 @@ int main()
             {
                 //sun-string matched means count will incremented.
                 count++;
-                i++;
             }
+        }
+        if(len==count)
+        {
+            temp=1;
+            break;
         }
     }
     //condition for sun-string length and count matched means printed the output here.
-    if(len == count)
+    if(temp)
     {
         printf("Substring \'%s\' is present inside the string \'%s\'.\n",str1,str);
     }

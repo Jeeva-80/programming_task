@@ -5,7 +5,7 @@ int main()
 	//declare the variable.
 	int i = 0,flag = 0;
 	char ch,ch1;
-	//dynamic memory allocation.
+	//dynamic memory allocation
 	char *str = malloc(30);
 	//read the string.
 	printf("Enter the string: ");
