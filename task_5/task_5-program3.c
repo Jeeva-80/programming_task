@@ -1,34 +1,22 @@
 #include <stdio.h>
 int main()
 {
-	unsigned long long int num,replace; //variables.
-	int result=0;
-	int n=0,n1=0,n2=0,n3=0,ret=0,ret1=0,count = 0,temp = 0;
+	unsigned long int result = 0,num;  //declare variable.
+	int rep,i = 0,grap = 0,n = 0,temp,count = 0;
 	printf("Enter the Number: "); //read the main number.
-	scanf("%lld",&num);
-	printf("Enter the replace number: "); //replaced number.
-	scanf("%lld",&replace);
-	temp = replace;
-	while(temp != 0)
+	scanf("%ld",&num);
+	printf("Enter the replace number: ");
+	scanf("%d",&rep); //replaced number. 
+	temp = rep;  //update.
+	for(i = temp; i > 0; i /= 2)
+		count++; //count(replaced) bit lesser then main bit count. 
+	if(count  < 14)
 	{
-		count++; //replace bit count.
-		temp /= 2;
-	}
-	if(count < 14)
-	{
-		n = num & ~((1 << 17)-1); //replaced logic.
-		n1 = n | replace;
-		n1 = n1 << 8;
-		n2 = n1 & ((1 << 17)-1);
-		n3 = num & ~((1 << 17)-1);
-		ret = n2 | n3;
-		ret1 = num & ((1 << 7)-1);
-		result = ret | ret1;
-		printf("The Final Number is %lld\n",result); //output.
-		return 0;
+		grap = ((num & ((1 << 8)-1)) | (rep << 8));
+		n = num & (~((1 << 17)-1));
+ 		result = ((unsigned)grap | n);         //output.
+		printf("The Final Number is %ld\n",result);
 	}
 	else
-	{
-		printf("Invalid number: %d, More than 14 bits!",replace); //Error output.
-	}
-}
+		printf("Invalid number: %d, More than 14 bits!\n",rep);  //Error output.
+} //End of program.
