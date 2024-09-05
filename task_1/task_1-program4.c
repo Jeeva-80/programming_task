@@ -1,44 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 int main()
 {
-    //declare variable.
-    int n,i = 0,key = 0,flag = 0,temp = 0;
-    //ask the user for array size.
-    printf("Enter the number of elements of arrays: ");
-    scanf("%d",&n);
-    //declare the array memory dynamically.
-    int *arr = malloc(sizeof(int)*n);
-    //read the array index value from the user.
-    for(i = 0;i < n; i++)
-    {
-        printf("Enter the number %d ",i+1);
-        scanf("%d",&arr[i]);
-    }
-    //Enter the array value that you can find.
-    printf("Enter the number to be found: ");
-    scanf("%d",&key);
-    //run the loop and find the index.
-    for(i = 0;i < n; i++)
-    {
-        //compare the value.
-        if(arr[i] == key)
-        {
-            //updated the flag value once the condition is true.
-            flag = 1;
-            temp = i; //stored the index to variables. 
-        }
-    }
-    //print the output here.
-    if(flag == 1)
-    {
-        printf("Number was found at index %d",temp);
-    }
-    else
-    {
-        printf("Number was NOT found\n");
-    }
- free(arr);
+	int n,i = 0,key = 0,flag = 1;   //declare variable.
+	printf("Enter the number of elements of arrays: "); 	//ask the user for array size.
+	scanf("%d",&n);
+	int *arr = malloc(sizeof(int)*n);   	//declare the array memory dynamically.
+	for(i = 0; i < n; i++)    	//read the array index value from the user.
+	{
+		printf("Enter the number %d ",i+1);
+		scanf("%d",&arr[i]);
+	}
+	printf("Enter the number to be found: ");   //Enter the array value that you can find.
+	scanf("%d",&key);
+	for(i=0; i<n; i++)
+	{
+		if(arr[i] == key)   //compare the key value.
+		{
+			printf("Number was found at index %d\n",i);   //output.
+			flag = 0;
+			break;
+		}
+	}
+	if(flag)
+		printf("Number was NOT found\n");   //Error message.
+	free(arr);  //free the memory.
 }
 
 //End of program.
