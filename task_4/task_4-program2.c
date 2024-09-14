@@ -1,19 +1,16 @@
 #include <stdio.h>
-#include <string.h>
 int main()
 {
 	char str[50];      //declare the string Size.
 	int arr[30];
 	char ch;           //declare the variable.
-	int i = 0,j = 0,flag = 0,count = 1,F_num = 0,S_num = 0,sum = 0;
+	int i = 0,flag = 0,count = 1,F_num = 0,S_num = 0,sum = 0;
 	printf("Enter the Operation String: ");   //read the string.
 	scanf("%[^\n]",str);
 	for(i = 0; str[i]; i++)    //loop.
 	{
 		if(str[i] == ' ')   //space.
-		{
 			i++;
-		}
 		if(str[i] >= '0' && str[i] <= '9')   //Find the number.
 		{
 			S_num = S_num * 10 + str[i] - '0';  //strore the int variable.
@@ -50,9 +47,7 @@ int main()
 		printf("The Result is %d\n",sum);  //printed output here.
 	}
 	else
-	{
 		printf("Operation cannot be done!!\n");   //Error message.
-	}
 }
 
 //End of program.

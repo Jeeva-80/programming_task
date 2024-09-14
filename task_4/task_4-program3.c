@@ -20,9 +20,10 @@ int main()
 	}
 	printf("The Filtered data is ");
 	for(i = 0; i < j; i++)
+	{
 		printf("%d, ",arr[i]);  //printed the value.
-	for(i = 0; i < j; i++)
-		sum += arr[i];       //printed the output.
+		sum += arr[i];
+	}
 	printf("\nThe sum of Data is %d",sum);
 	return 0;
 }

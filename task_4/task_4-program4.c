@@ -5,6 +5,7 @@ int main()
 	char str[50];      //declare the string size.
 	int i = 0,num = 0,count = 0,flag = 0;
 	int date = 0,month = 0,year = 0,co = 0,num_co = 0;  //declare the variable.
+	char *str1[100] = {"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGEST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"};
 	printf("Enter the Date: ");    //read the string.
 	scanf("%[^\n]",str);
 	while(str[i])   //loop.
@@ -28,7 +29,7 @@ int main()
 		}
 		else if(str[i] >= 33 && str[i] <= 44 || str[i] >= 58 && str[i] <= 64)
 		{
-		    flag = 1;
+			flag = 1;
 		}
 		i++;
 	}
@@ -41,45 +42,9 @@ int main()
 	}
 	if(num_co >= 8 && flag != 1 && (month >= 1 && month <= 12) && (date >= 1 && date <= 31))
 	{
-		switch(month)              //print the output here.
-		{
-		case 1:
-			printf("Valid Date: %d January %d",date,year);
-			break;
-		case 2:
-			printf("Valid Date: %d February %d",date,year);
-			break;
-		case 3:
-			printf("Valid Date: %d March %d",date,year);
-			break;
-		case 4:
-			printf("Valid Date: %d April %d",date,year);
-			break;
-		case 5:
-			printf("Valid Date: %d May %d",date,year);
-			break;
-		case 6:
-			printf("Valid Date: %d June %d",date,year);
-			break;
-		case 7:
-			printf("Valid Date: %d July %d",date,year);
-			break;
-		case 8:
-			printf("Valid Date: %d october %d",date,year);
-			break;
-		case 9:
-			printf("Valid Date: %d September %d",date,year);
-			break;
-		case 10:
-			printf("Valid Date: %d october %d",date,year);
-			break;
-		case 11:
-			printf("Valid Date: %d November %d",date,year);
-			break;
-		case 12:
-			printf("Valid Date: %d December %d",date,year);
-			break;
-		}
+		for(i=1; str[i]; i++)
+			if(month == i)
+				printf("Valid Date: %d %s %d\n",date,str1[i],year);
 	}
 	else
 		printf("Invalid Date!!\n");  //Error messgae.
