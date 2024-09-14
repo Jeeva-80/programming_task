@@ -1,32 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
-
 int main()
 {
-	//declare the variable.
-	int i = 0,arr[256] = {0};
-	//read the string and dynamic memory allocation.
-	printf("Enter the String: ");
-	char *str = malloc(30);
+	int i = 0,arr[256] = {0};//declare the variable.
+	char str[30];
+	printf("Enter the String: ");  	//read the string and dynamic memory allocation.
 	scanf("%[^\n]",str);
-	//loop.
-	for (i = 0; str[i] ; i++)
-	{
-		//char should count and stord the array.
-		arr[(unsigned char)str[i]]++;
-	}
-	//loop.
-	for (i = 256; i > 0; i--)
-	{
-		//check the condition and print the occurance
-		if (arr[i] > 0)
-		{
+	for (i = 0; str[i] ; i++)  	//loop.
+		arr[(unsigned char)str[i]]++;  	//char should count and stord the array.
+	for (i = 0; i < 256; i++)  	//loop.
+		if (arr[i] > 0)   //check the condition and print the occurance
 			printf("%c: %d\n", i, arr[i]);
-		}
-	}
 	printf("\n");
-	//free the memory.
-	free(str);
 	return 0;
 }
 

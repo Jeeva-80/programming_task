@@ -1,54 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
 int main()
 {
-	//declare the variable.
-	int i = 0,flag = 0;
-	char ch,ch1;
-	//dynamic memory allocation
-	char *str = malloc(30);
-	//read the string.
-	printf("Enter the string: ");
+	int i = 0;  	//declare the variable.
+	char ch,ch1,str[30];//memory allocation
+	printf("Enter the string: ");  	//read the string.
 	scanf("%[^\n]",str);
-	//read the character should replace. 
-	printf("Enter the letter to be replaced: ");
+	printf("Enter the letter to be replaced: ");   //read the character should replace.
 	scanf(" %c",&ch);
-	//read the replaced character.
-	printf("Enter the letter: ");
+	printf("Enter the letter: ");   //read the replaced character.
 	scanf(" %c",&ch1);
-	//condition both character is same.
-	if(ch == ch1)
+	if(ch == ch1)   	//condition both character is same.
 	{
-		//printed here.
-	    printf("Characters are same, Nothing got replaced!\n");
-            printf("The Final String is %s\n",str);
-            return 0;
+		printf("Characters are same, Nothing got replaced!\nThe Final String is %s\n",str);  	//printed here.
+		return 0;
 	}
-	//loop.
-	for(i = 0; str[i]; i++)
+	for(i = 0; str[i]; i++)  	//loop.
 	{
-		//compare the character.
-		if(str[i] == ch)
+		if(str[i] == ch)   	//compare the character.
 		{
-			//once matched then replaced.
-			flag = 1;
 			str[i] = ch1;
+			printf("Replaced \'%c\' with \'%c\'!\nThe Final String is %s\n",ch,ch1,str); //output.
+			return 0;
 		}
 	}
-	//output printed here.
-	if(flag)
-	{
-		printf("Replaced \'%c\' with \'%c\'!\n",ch,ch1);
-		printf("The Final String is %s\n",str);
-	}
-	else
-	{
-	    printf("Letter \'%c\' not found! Nothing got replaced!\n",ch);
-            printf("The Final String is %s\n",str);
-	}
-	//free the memeory.
-	free(str);
+	printf("Letter \'%c\' not found! Nothing got replaced!\nThe Final String is %s\n",ch,str);
 	return 0;
-}
-
-//End of program.
+}//End of program.
