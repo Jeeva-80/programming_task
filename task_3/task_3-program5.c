@@ -3,9 +3,7 @@
 int main()
 {
 	int i = 0,j = 0,F_ind = 0,L_ind = 0,count = 0,ret = 0;      //declare variable.
-	char str[50];                                               //declare the string.
-	char str1[50];
-	char ch;
+	char str[50],str1[50],ch;                                               //declare the string.
 	printf("Enter the String: ");    //read the main string.
 	scanf("%[^\n]",str);
 	printf("Enter the substring: "); //read the sub-string.
@@ -45,22 +43,22 @@ int main()
 	}
 	else if(count > len1)  // sub-string char lesser.
 	{
-	    for (i = F_ind;i<L_ind;i++) //find the char and make its zero.
-	        str[i] = '0';
-	    i=F_ind,j=0;
-		while(str1[j])               //add the sub-string. 
+		for (i = F_ind; i<L_ind; i++) //find the char and make its zero.
+			str[i] = '0';
+		i=F_ind,j=0;
+		while(str1[j])               //add the sub-string.
 			str[i++] = str1[j++];
-			int cnt  =strlen(str);
-			for(i = 0; i < cnt ; i++)     //remove the zero.
+		int cnt  =strlen(str);
+		for(i = 0; i < cnt ; i++)     //remove the zero.
+		{
+			if(str[i] == '0')
 			{
-				if(str[i] == '0')
-				{
-					for(j = i; j < cnt; j++)
-						str[j] = str[j+1];
-					cnt--;
-					i--;
-				}
+				for(j = i; j < cnt; j++)
+					str[j] = str[j+1];
+				cnt--;
+				i--;
 			}
+		}
 	}
 	printf("Final string is: %s\n",str);  //the final output.
 	return 0;
