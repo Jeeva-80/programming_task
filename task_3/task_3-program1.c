@@ -1,31 +1,55 @@
 #include <stdio.h>
 #include <string.h>
+static inline int fun(char str[],char str1[],int len,int len1, int ind)
+{
+	char str2[30];
+	int i = 0,j = 0,size1 = 0,len2 = 0,k = 0;
+	size1 = len - ind;
+	if((ind + 1) == len)
+	{
+		for(j=0; j<len1; j++)
+			str[len++] = str1[j];
+		len2 = strlen(str);
+	    len2 = '\0';
+	    printf("%s\n",str);
+	}
+	else
+	{
+		for(i=0;str[i];i++)
+		{
+			str2[k++] = str[i];
+			if(i == ind)
+			{
+				while(str1[j])
+				{
+					str2[k++] = str1[j++];
+					if(j == len1)
+					{
+						continue;
+					}
+				}
+			}
+		}
+		int len3 = strlen(str2);
+		str2[len3] = '\0';
+		printf("%s\n",str2);
+	}
+}
 int main()
 {
-	int index = 0,i = 0,j = 0;   //declare the variable.
-	char str[50],str1[50];  	//declare string size.
+	int index = 0,i = 0,j = 0,len = 0,len1;   //declare the variable.
+	char str[50],str1[20];  	//declare string size.
 	printf("Enter the String: ");  //read the main string.
 	scanf("%s",str);
 	printf("Enter the substring: ");  	//read the sub-string we can to main string.
 	scanf(" %s",str1);
 	printf("Enter the index from which the substring is to be inserted: "); //read the index to add the sub-string.
 	scanf("%d",&index);
-	int len = strlen(str);  	//calculate the length of main and sub-string.
-	int len1 = strlen(str1);
+	len = strlen(str);
+	len1 = strlen(str1);
 	if(len > index)
-	{
-		for(i = len; i >= index; i--)  //this loop am create the space.
-			str[i + len1 - 1] = str[i - 1];
-		i = 0;  	//update the i(it will move to zero index).
-		for(i = index; i <= len; i++)  //this loop am adding the sub-string.
-		{
-			str[i] = str1[j];
-			j++;
-		}
-		int len2 = strlen(str);  	//this case am finding and add the null character.
-		str[len2] = '\0';
-		printf("Final string is %s\n",str);  	//print the output here.
-	}
-	else
-		printf("Index out of bound!\n");   //Error output printed here.
-}//End of program.
+		fun(str,str1,len,len1,index);
+	else if(len < index || len1 > len)
+		printf("Index out of bound!\n");
+	return 0;
+}
